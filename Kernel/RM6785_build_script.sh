@@ -116,8 +116,10 @@ make O=out ARCH="${ARCH}" "${DEFCONFIG}"
         exit 1
     fi
     
-    git clone --depth=1 https://github.com/anupamroy777/AnyKernel33.git AnyKernel
-    cp out/arch/arm64/boot/Image.gz-dtb AnyKernel
+   cd AnyKernel 
+git clone --depth=1 https://github.com/AbzRaider/AnyKernel33.git -b rui1
+cd /
+cp out/arch/arm64/boot/Image.gz-dtb AnyKernel
 }
 # Zipping
 zipping() {
