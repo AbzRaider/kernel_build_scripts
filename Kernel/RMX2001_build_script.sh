@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # clone repo
 git clone --depth=1 https://github.com/AbzRaider/android_kernel_realme_RMX2001.git -b Q
 cd android_kernel_realme_RMX2001
