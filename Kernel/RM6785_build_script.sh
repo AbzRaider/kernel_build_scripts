@@ -24,7 +24,7 @@ PATH="${PWD}/clang/bin:${PATH}"
 export KBUILD_COMPILER_STRING
 ARCH=arm64
 export ARCH
-KBUILD_BUILD_HOST=AbzRaider
+KBUILD_BUILD_HOST=RM6785_DEV
 export KBUILD_BUILD_HOST
 KBUILD_BUILD_USER="AbzRaider"
 export KBUILD_BUILD_USER
@@ -45,15 +45,11 @@ export STATUS
 source "${HOME}"/.bashrc && source "${HOME}"/.profile
 
 tg() {
-    curl -sX POST https://api.telegram.org/bot"${token}"/sendMessage -d chat_id="${chat_id}" -d parse_mode=Markdown -d disable_web_page_preview=true -d text="$1" &>/dev/null
-}
+    
 
 tgs() {
         MD5=$(md5sum "$1" | cut -d' ' -f1)
-        curl -fsSL -X POST -F document=@"$1" https://api.telegram.org/bot"${token}"/sendDocument \
-             -F "chat_id=${chat_id}" \
-             -F "parse_mode=Markdown" \
-             -F "caption=$2 | *MD5*: \`$MD5\`"
+        
 }
 
 # sticker plox
@@ -107,7 +103,6 @@ make O=out ARCH="${ARCH}" "${DEFCONFIG}"
 		      	OBJCOPY=llvm-objcopy \
 			OBJDUMP=llvm-objdump \
 			STRIP=llvm-strip
-			CLANG_TRIPLE=aarch64-linux-gnu- \
                    	CONFIG_NO_ERROR_ON_MISMATCH=y 2>&1 | tee error.log 
 
 
@@ -134,4 +129,3 @@ compile
 zipping
 END=$(date +"%s")
 DIFF=$(($END - $START))
-push
