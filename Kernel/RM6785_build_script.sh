@@ -128,3 +128,4 @@ sendinfo
 compile
 zipping
 push
+exit 1
