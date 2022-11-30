@@ -127,5 +127,3 @@ deps
 sendinfo
 compile
 zipping
-END=$(date +"%s")
-DIFF=$(($END - $START))
