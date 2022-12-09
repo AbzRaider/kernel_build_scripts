@@ -34,7 +34,7 @@ DEVICE="Xiaomi 11i"
 export DEVICE
 CODENAME="pissarro"
 export CODENAME
-DEFCONFIG="cannon_user_defconfig"
+DEFCONFIG="pissarro_user_defconfig"
 export DEFCONFIG
 COMMIT_HASH=$(git rev-parse --short HEAD)
 export COMMIT_HASH
